@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 # Grzegorz Wieczorek
+#
+# Usage: ./check_haproxy.py -u http://your-site.pl
 
 from optparse import OptionParser
 import os, sys, urllib2
@@ -22,7 +24,8 @@ if not getattr(options, 'url'):
 
 adres = options.url+"/haproxy?stats;csv"
 
-strona = urllib2.urlopen("http://balancer.diframe.pl/haproxy?stats;csv")
+#strona = urllib2.urlopen("http://balancer.diframe.pl/haproxy?stats;csv")
+strona = urllib2.urlopen(adres)
 log = strona.read()
 strona.close()
 
