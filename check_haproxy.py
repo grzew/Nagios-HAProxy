@@ -24,7 +24,6 @@ if not getattr(options, 'url'):
 
 adres = options.url+"/haproxy?stats;csv"
 
-#strona = urllib2.urlopen("http://balancer.diframe.pl/haproxy?stats;csv")
 strona = urllib2.urlopen(adres)
 log = strona.read()
 strona.close()
@@ -43,7 +42,7 @@ for i in log:
 	else:
 		slowo += i
 
-print "Ilosc polaczen: %s :: Sekstylion: %s %s %s/%s  %s %s %s/%s" % (lista[1][4],lista[6][0],lista[6][17],lista[6][18],lista[6][19],lista[9][0],lista[9][17],lista[9][18],lista[9][19])
+print "Ilosc polaczen: %s :: Monitored: %s %s %s/%s  %s %s %s/%s" % (lista[1][4],lista[6][0],lista[6][17],lista[6][18],lista[6][19],lista[9][0],lista[9][17],lista[9][18],lista[9][19])
 suma = 0
 if suma < 12:
 	sys.exit(OK)
